@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import tech.ada.bootcamp.arquitetura.cartaoservice.payloads.request.EnderecoRequest;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

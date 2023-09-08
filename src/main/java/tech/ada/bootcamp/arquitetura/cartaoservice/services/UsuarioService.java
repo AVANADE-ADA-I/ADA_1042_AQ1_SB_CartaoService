@@ -3,17 +3,14 @@ package tech.ada.bootcamp.arquitetura.cartaoservice.services;
 
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
-import tech.ada.bootcamp.arquitetura.cartaoservice.entities.Dependente;
 import tech.ada.bootcamp.arquitetura.cartaoservice.payloads.request.CadastroDependenteRequest;
 import tech.ada.bootcamp.arquitetura.cartaoservice.payloads.request.CadastroPrincipalRequest;
 import org.springframework.web.client.RestTemplate;
 
 
-import java.util.List;
-
 @Service
 public class UsuarioService {
-    private ApiService apiService;
+    private final ApiService apiService;
 
     public UsuarioService(ApiService apiService) {
         this.apiService = apiService;

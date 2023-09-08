@@ -1,4 +1,5 @@
 package tech.ada.bootcamp.arquitetura.cartaoservice.services;
+
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -8,6 +9,10 @@ public class ApiService {
     private ApiEndpoint criarUsuario;
     private ApiEndpoint adicionarDependente;
     private ApiEndpoint adicionarCartaoCompra;
+    private ApiEndpoint realizarCompra;
+    private ApiEndpoint adicinarCompraFatura;
+
+    private ApiEndpoint pegarFatura;
 
     public ApiEndpoint getCriarUsuario() {
         return criarUsuario;
@@ -33,6 +38,29 @@ public class ApiService {
         this.adicionarCartaoCompra = adicionarCartaoCompra;
     }
 
+    public ApiEndpoint getRealizarCompra() {
+        return realizarCompra;
+    }
+
+    public void setRealizarCompra(ApiEndpoint realizarCompra) {
+        this.realizarCompra = realizarCompra;
+    }
+
+    public ApiEndpoint getAdicinarCompraFatura() {
+        return adicinarCompraFatura;
+    }
+
+    public void setAdicinarCompraFatura(ApiEndpoint adicinarCompraFatura) {
+        this.adicinarCompraFatura = adicinarCompraFatura;
+    }
+
+    public ApiEndpoint getPegarFatura() {
+        return pegarFatura;
+    }
+
+    public void setPegarFatura(ApiEndpoint pegarFatura) {
+        this.pegarFatura = pegarFatura;
+    }
 
         public static class ApiEndpoint {
         private String url;
