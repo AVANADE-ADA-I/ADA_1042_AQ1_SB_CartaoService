@@ -45,6 +45,7 @@ public class UsuarioService {
     public ResponseEntity<String> criarPrincipal(CadastroPrincipalRequest  dto) {
         String criarUsuarioUrl = apiService.getCriarUsuario().getUrl();
         String adicionarCartaoCompraUrl = apiService.getAdicionarCartaoCompra().getUrl();
+        String adicionarUsarioFaturaUrl = apiService.getAdicionarUsarioFatura().getUrl();
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
@@ -61,7 +62,18 @@ public class UsuarioService {
 
             if (usuario.getStatusCode().is2xxSuccessful()) {
                 String usuarioBody = usuario.getBody();
-                restTemplate.getForEntity(adicionarCartaoCompraUrl, String.class);
+                restTemplate.exchange(
+                        adicionarCartaoCompraUrl,
+                        HttpMethod.POST,
+                        usuario,
+                        String.class
+                );
+                restTemplate.exchange(
+                        adicionarUsarioFaturaUrl,
+                        HttpMethod.POST,
+                        usuario,
+                        String.class
+                );
                 return ResponseEntity.ok(usuarioBody);
             }
             return ResponseEntity.status(500).body("Ocorreu um erro interno do servidor: Não foi criado o usario");

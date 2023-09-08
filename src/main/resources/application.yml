@@ -26,14 +26,16 @@ spring:
 
 api:
   criarUsuario:
-    url: https://...
+    url: http://localhost:9081/cartao/principal
   adicionarDependente:
-    url: https://...
+    url: http://localhost:9081/cartao/dependente
   adicionarCartaoCompra:
-    url: https://...
+    url: http://localhost:9082/usuario
   realizarCompra:
-    url: https://...
+    url: http://localhost:9082/compra
   adicinarCompraFatura:
-      url: https://...
+      url: http://localhost:9083/compra
+  adicionarUsarioFatura:
+    url: http://localhost:9083/usuario
   pegarFatura:
-    url: https://...
+    url: http://localhost:9083
