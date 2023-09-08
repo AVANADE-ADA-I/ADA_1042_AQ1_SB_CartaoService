@@ -20,7 +20,6 @@ public class UsuarioController {
     public ResponseEntity<String> cadastrarUsuario(@RequestBody @Valid CadastroPrincipalRequest dto){
         return this.usuarioService.criarPrincipal(dto);
     }
-
     @PostMapping(path = "/dependente", produces = "application/json" )
     public ResponseEntity<String> adicionarDependente(@RequestBody @Valid CadastroDependenteRequest dto){
         return this.usuarioService.criarDependente(dto);

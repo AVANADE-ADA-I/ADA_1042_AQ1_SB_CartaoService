@@ -10,7 +10,6 @@ import tech.ada.bootcamp.arquitetura.cartaoservice.payloads.request.CompraReques
 @Service
 public class CompraService {
     private final ApiService apiService;
-
     public CompraService(ApiService apiService) {
         this.apiService = apiService;
     }

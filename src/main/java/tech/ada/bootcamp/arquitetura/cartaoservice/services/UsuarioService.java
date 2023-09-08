@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 import tech.ada.bootcamp.arquitetura.cartaoservice.payloads.request.CadastroDependenteRequest;
 import tech.ada.bootcamp.arquitetura.cartaoservice.payloads.request.CadastroPrincipalRequest;
 import org.springframework.web.client.RestTemplate;
-
-
 @Service
 public class UsuarioService {
     private final ApiService apiService;

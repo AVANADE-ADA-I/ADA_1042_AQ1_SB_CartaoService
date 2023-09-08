@@ -33,9 +33,5 @@ public class FaturaService {
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Ocorreu um erro interno do servidor: " + e.getMessage());
         }
-
-
     }
-
-
   }

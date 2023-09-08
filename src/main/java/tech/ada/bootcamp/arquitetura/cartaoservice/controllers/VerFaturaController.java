@@ -14,8 +14,6 @@ import tech.ada.bootcamp.arquitetura.cartaoservice.services.FaturaService;
 @Slf4j
 public class VerFaturaController {
     private final FaturaService faturaService;
-
-
     public VerFaturaController(FaturaService faturaService) {
         this.faturaService = faturaService;
     }
@@ -24,5 +22,4 @@ public class VerFaturaController {
             , @PathVariable("mes") Integer mes, @PathVariable("ano") Integer ano){
         return this.faturaService.pegarFatura(numeroCartao, mes, ano);
     }
-
 }

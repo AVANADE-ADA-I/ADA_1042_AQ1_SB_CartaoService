@@ -11,21 +11,17 @@ public class ApiService {
     private ApiEndpoint adicionarCartaoCompra;
     private ApiEndpoint realizarCompra;
     private ApiEndpoint adicinarCompraFatura;
-
     private ApiEndpoint pegarFatura;
 
     public ApiEndpoint getCriarUsuario() {
         return criarUsuario;
     }
-
     public void setCriarUsuario(ApiEndpoint criarUsuario) {
         this.criarUsuario = criarUsuario;
     }
-
     public ApiEndpoint getAdicionarDependente() {
         return adicionarDependente;
     }
-
     public void setAdicionarDependente(ApiEndpoint adicionarCartaoCompra) {
         this.adicionarDependente = adicionarDependente;
     }
@@ -53,7 +49,6 @@ public class ApiService {
     public void setAdicinarCompraFatura(ApiEndpoint adicinarCompraFatura) {
         this.adicinarCompraFatura = adicinarCompraFatura;
     }
-
     public ApiEndpoint getPegarFatura() {
         return pegarFatura;
     }
