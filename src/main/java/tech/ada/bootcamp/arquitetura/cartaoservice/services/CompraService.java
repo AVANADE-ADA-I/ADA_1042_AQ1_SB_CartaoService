@@ -23,7 +23,7 @@ public class CompraService {
 
         try {
             HttpEntity<CompraRequest> dtoToJson = new HttpEntity<>(dto, headers);
-
+            System.out.println(dtoToJson);
             ResponseEntity<String> compra = restTemplate.exchange(
                     realizarCompraUrl,
                     HttpMethod.POST,
@@ -33,7 +33,12 @@ public class CompraService {
 
             if (compra.getStatusCode().is2xxSuccessful()) {
                 String compraBody = compra.getBody();
-                restTemplate.getForEntity(AdicinarCompraFaturaUrl, String.class);
+                restTemplate.exchange(
+                        AdicinarCompraFaturaUrl,
+                        HttpMethod.POST,
+                        compra,
+                        String.class
+                );
                 return ResponseEntity.ok(compraBody);
             }
             return ResponseEntity.status(500).body("Ocorreu um erro interno do servidor: Não foi possivel realizar essa compra");

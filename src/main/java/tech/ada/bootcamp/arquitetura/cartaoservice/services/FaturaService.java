@@ -16,14 +16,11 @@ public class FaturaService {
     public ResponseEntity<String> pegarFatura(String numeroCartao, int month, int year) {
         String pegarFaturaUrl = apiService.getPegarFatura().getUrl();
 
-        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(pegarFaturaUrl)
-                .queryParam("numeroCartao", numeroCartao)
-                .queryParam("month", month)
-                .queryParam("year", year);
+        pegarFaturaUrl = pegarFaturaUrl + '/' + numeroCartao + '/' + month + '/' + year;
 
         try {
             RestTemplate restTemplate = new RestTemplate();
-            ResponseEntity<String> fatura = restTemplate.getForEntity(builder.toUriString(), String.class);
+            ResponseEntity<String> fatura = restTemplate.getForEntity(pegarFaturaUrl, String.class);
 
             if (fatura.getStatusCode().is2xxSuccessful()) {
                 String faturaBody = fatura.getBody();

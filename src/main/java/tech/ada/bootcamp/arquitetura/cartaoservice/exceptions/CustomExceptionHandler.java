@@ -1,6 +1,5 @@
 package tech.ada.bootcamp.arquitetura.cartaoservice.exceptions;
 
-import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -35,11 +34,6 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ExceptionDTO(ex.getMessage()));
     }
 
-
-    @ExceptionHandler(EntityNotFoundException.class)
-    public ResponseEntity<Object> handleEntityNotFound(EntityNotFoundException ex) {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ExceptionDTO(ex.getMessage()));
-    }
     private record ExceptionDTO(String message) {}
     private record ArgNotValidDTO(String field, String message) {
         public ArgNotValidDTO(FieldError error) {

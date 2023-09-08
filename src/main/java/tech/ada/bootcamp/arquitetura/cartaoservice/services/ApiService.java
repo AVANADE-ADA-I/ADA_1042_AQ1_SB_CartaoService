@@ -21,10 +21,11 @@ public class ApiService {
     public void setCriarUsuario(ApiEndpoint criarUsuario) {
         this.criarUsuario = criarUsuario;
     }
+
     public ApiEndpoint getAdicionarDependente() {
         return adicionarDependente;
     }
-    public void setAdicionarDependente(ApiEndpoint adicionarCartaoCompra) {
+    public void setAdicionarDependente(ApiEndpoint adicionarDependente) {
         this.adicionarDependente = adicionarDependente;
     }
 

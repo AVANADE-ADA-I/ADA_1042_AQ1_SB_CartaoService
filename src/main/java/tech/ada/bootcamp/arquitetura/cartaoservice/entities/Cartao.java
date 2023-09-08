@@ -1,8 +1,7 @@
 package tech.ada.bootcamp.arquitetura.cartaoservice.entities;
 
-import jakarta.persistence.*;
+
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import tech.ada.bootcamp.arquitetura.cartaoservice.payloads.DiaVencimento;
 import tech.ada.bootcamp.arquitetura.cartaoservice.payloads.TipoCartao;
 import tech.ada.bootcamp.arquitetura.cartaoservice.payloads.response.CadastroUsuarioResponse;
@@ -11,11 +10,7 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 @Data
-@Entity
-@Table(name = "cartao")
-@NoArgsConstructor
 public class Cartao {
-    @Id
     private String numeroCartao;
     private String nomeTitular;
     private LocalDate vencimentoCartao;
@@ -26,13 +21,8 @@ public class Cartao {
     private TipoCartao tipoCartao;
 
     private String idContaBanco;
-
-    @ManyToOne
-    @JoinColumn(name = "principal_identificador")
     private Principal principal;
 
-    @ManyToOne
-    @JoinColumn(name = "dependente_identificador")
     private Dependente dependente;
 
     public Cartao(Principal principal, TipoCartao tipoCartao, DiaVencimento diaVencimento) {

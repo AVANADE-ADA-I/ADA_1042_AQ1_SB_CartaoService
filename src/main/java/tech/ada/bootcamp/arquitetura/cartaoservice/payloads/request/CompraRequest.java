@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 public record CompraRequest (
         @NotBlank
@@ -13,6 +14,9 @@ public record CompraRequest (
         String numeroCartao,
         @NotBlank
         String loja,
+        @NotNull
+        LocalDateTime dataCompra,
+
         @NotNull
         @Digits(integer = 5, fraction = 2, message = "valor deve possuir no máximo 5 casas inteiras e 2 decimais.")
         BigDecimal valor){
